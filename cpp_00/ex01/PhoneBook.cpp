@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:54:55 by guphilip          #+#    #+#             */
-/*   Updated: 2025/05/28 13:45:33 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/05/30 12:13:19 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void PhoneBook::searchContacts() const
 	if (!(ss >> index) || index < 0 || index >= displayCount)
 	{
 		std::cout << "Index invalide." << std::endl;
-		return;
+		return ;
 	}
 	contacts[index].displayFull();
 }
