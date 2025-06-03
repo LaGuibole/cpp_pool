@@ -5,24 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 12:18:47 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/03 09:18:11 by guphilip         ###   ########.fr       */
+/*   Created: 2025/06/03 09:07:14 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/03 09:37:39 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "Colors.hpp"
-
-Zombie* newZombie(std::string name);
-void	randomChump(std::string name);
+#include "Harl.hpp"
 
 int main(int argc, char **argv)
 {
-	Zombie* heapZombie = newZombie("Heapster Zombie");
-	heapZombie->announce();
-	delete heapZombie;
-	// heapZombie->~Zombie();
+	Harl harl;
 
-	randomChump("StackOverflowed Zombie");
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
 	return 0;
 }

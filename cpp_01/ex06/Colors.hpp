@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Colors.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 12:18:47 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/03 09:18:11 by guphilip         ###   ########.fr       */
+/*   Created: 2025/05/30 14:24:16 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/03 09:39:18 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "Colors.hpp"
+#ifndef COLORS_H
+#define COLORS_H
 
-Zombie* newZombie(std::string name);
-void	randomChump(std::string name);
+#define RESET "\033[0m"
 
-int main(int argc, char **argv)
-{
-	Zombie* heapZombie = newZombie("Heapster Zombie");
-	heapZombie->announce();
-	delete heapZombie;
-	// heapZombie->~Zombie();
+#define GREEN "\033[32m"
+#define RED "\033[31m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define CYAN "\033[36m"
+#define MAGENTA "\033[35m"
+#define WHITE "\033[37m"
 
-	randomChump("StackOverflowed Zombie");
-	return 0;
-}
+#endif
