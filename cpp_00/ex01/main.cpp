@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:10:51 by guphilip          #+#    #+#             */
-/*   Updated: 2025/05/28 13:13:38 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/03 14:49:04 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main()
 	{
 		std::cout << "Entrez une commande (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command);
-
 		if (command == "ADD")
 			phoneBook.addContact();
 		else if (command == "SEARCH")

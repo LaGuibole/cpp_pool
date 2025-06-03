@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:06:20 by guphilip          #+#    #+#             */
-/*   Updated: 2025/05/28 13:36:01 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/03 14:55:40 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void Contact::setInfo()
 		std::cout << "Nickname: ";
 		std::getline(std::cin, input);
 	} while (input.empty());
-	last_name = input;
+	nickname = input;
 
 	do {
 		std::cout << "Phone Number: ";

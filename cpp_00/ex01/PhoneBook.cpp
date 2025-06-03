@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:54:55 by guphilip          #+#    #+#             */
-/*   Updated: 2025/05/30 12:13:19 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/03 13:45:32 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void PhoneBook::searchContacts() const
 {
 	if (count == 0)
 	{
-		std::cout << "Aucun contact enregistre << std::endl";
+		std::cout << "Aucun contact enregistre" << std::endl;
 		return;
 	}
 	std::cout << "|"
@@ -42,7 +42,7 @@ void PhoneBook::searchContacts() const
 	std::cout << "Entrez l'index du contact a afficher : ";
 	std::string input;
 	std::getline(std::cin, input);
-
+	
 	std::stringstream ss(input);
 	int index;
 	if (!(ss >> index) || index < 0 || index >= displayCount)

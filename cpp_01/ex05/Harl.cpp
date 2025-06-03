@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 09:07:09 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/03 09:40:26 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/03 14:20:50 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void Harl::error() {std::cout << CYAN ERROR_MSG RESET;}
 void Harl::complain(std::string level)
 {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
 	HarlFunction functions[] = {
 		&Harl::debug,
 		&Harl::info,

@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:52:59 by guphilip          #+#    #+#             */
-/*   Updated: 2025/05/28 15:38:16 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/03 14:12:03 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
-
-Account::Account() {}
 
 Account::Account(int initial_deposit)
 {
@@ -111,7 +109,6 @@ void	Account::displayStatus() const
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";" << "amount:" << this->checkAmount() << ";" << "deposits:" << this->_nbDeposits << ";" << "withdrawals:" << this->_nbWithdrawals << "\n";
 }
-
 
 void	Account::_displayTimestamp()
 {
