@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 09:07:11 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/03 09:38:18 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/03 16:10:42 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 #define WARNING_MSG "[WARNING] I think I deserve to have some extra bacon for free. I've been coming for years, whereas you started working here just last month\n"
 #define ERROR_MSG "[ERROR] This is unacceptable! I want to speak to the manager now! I'm the OG Karen, fear me\n"
 #define UNKOWN_MSG "Unknown level\n"
-
 
 class Harl
 {
