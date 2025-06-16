@@ -1,0 +1,71 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/16 12:26:31 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/16 16:20:20 by guphilip         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "Colors.hpp"
+
+FragTrap::FragTrap() {}
+
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
+	this->name = name;
+	std::cout << MAGENTA "FragTrap consructor has been called : " << this->name << RESET << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
+};
+
+FragTrap::~FragTrap() {
+	std::cout << MAGENTA "FragTrap destructor has been called : " << this->name << RESET << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap& other)
+{
+	std::cout << MAGENTA "FragTrap copy constructor has been called : " << this->name << RESET << std::endl;
+    *this = other;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& copy)
+{
+	std::cout << MAGENTA "FragTrap copy assignement has been called : " << this->name << RESET << std::endl;
+	if (this != &copy)
+	{
+		this->name = copy.name;
+		this->hitPoints = copy.hitPoints;
+		this->energyPoints = copy.energyPoints;
+		this->attackDamage = copy.attackDamage;
+	}
+	return *this;
+}
+
+void FragTrap::highFiveGuys(void)
+{
+	std::string answer;
+
+	std::cout << "Wanna give me an High-Five ? [y] - Yes | [n] - No" << std::endl;
+	while (answer != "y" || answer != "n")
+	{
+		answer = std::getwchar ();
+		if (answer == "y")
+		{
+			std::cout << "Nice, High-Five my friend !" << std::endl;
+			break ;
+		}
+		else if (answer == "n")
+		{
+			std::cout << "You're such a loser ... T_T" << std::endl;
+			break ;
+		}
+		else
+			std::cout << "Wrong input '" << answer << "', try [y] or [n]" << std::endl;
+	}
+}
