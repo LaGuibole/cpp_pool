@@ -1,3 +1,5 @@
 .vscode/
 *.o
 cpp_03_subject.pdf
+cpp_04_subject.pdf
+.DS_Store
