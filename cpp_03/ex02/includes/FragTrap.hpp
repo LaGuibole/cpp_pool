@@ -1,31 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 14:10:58 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/04 15:27:36 by guphilip         ###   ########.fr       */
+/*   Created: 2025/06/16 12:26:28 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/16 12:26:29 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-
-int main(int argc, char **argv)
-{
-	Fixed		a;
-	Fixed const b(Fixed(5.05f) * Fixed(2));
-
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max_const(a, b) << std::endl;
-
-	return 0;
-}
