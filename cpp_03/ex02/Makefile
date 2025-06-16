@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: GP <GP@student.42.fr>                      +#+  +:+       +#+         #
+#    By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/14 15:00:00 by guphilip          #+#    #+#              #
-#    Updated: 2025/06/15 01:40:39 by GP               ###   ########.fr        #
+#    Updated: 2025/06/16 13:10:54 by guphilip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,20 @@
 #                                 Makefile Portable                            #
 # **************************************************************************** #
 
-NAME        := scavstrap
+NAME        := fragtrap
 SRC_DIR     := srcs
 OBJ_DIR     := build
 INC_DIR     := includes
 
 SRCS        := $(SRC_DIR)/main.cpp \
                $(SRC_DIR)/ClapTrap.cpp \
-			   $(SRC_DIR)/ScavTrap.cpp
+			   $(SRC_DIR)/ScavTrap.cpp \
+			   $(SRC_DIR)/FragTrap.cpp
 
 OBJS        := $(OBJ_DIR)/main.o \
                $(OBJ_DIR)/ClapTrap.o \
-			   $(OBJ_DIR)/ScavTrap.o
+			   $(OBJ_DIR)/ScavTrap.o \
+			   $(OBJ_DIR)/FragTrap.o
 
 # OS DETECTION (MAC / LINUX)
 UNAME_S     := $(shell uname -s)

@@ -6,12 +6,14 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:10:21 by GP                #+#    #+#             */
-/*   Updated: 2025/06/16 12:24:10 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/16 12:43:23 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "Colors.hpp"
+
+ClapTrap::ClapTrap() {}
 
 ClapTrap::ClapTrap(const std::string& name) : name(name) {
     hitPoints = 10;

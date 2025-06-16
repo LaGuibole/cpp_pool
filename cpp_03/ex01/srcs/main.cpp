@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:16:22 by GP                #+#    #+#             */
-/*   Updated: 2025/06/16 12:21:04 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/16 13:04:25 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ int main (void)
     std::cout << LINE << std::endl;
     std::cout << SCAVTRAP << std::endl;
     std::cout << LINE << std::endl;
-
     scav.takeDamage(5);
     scav.beRepaired(3);
     scav.attack("SCAVTRAP TARGET");
     scav.guardGate();
 
+    ScavTrap scav2(scav);
     std::cout << LINE << std::endl;
     std::cout << DESTRUCTOR << std::endl;
     std::cout << LINE << std::endl;

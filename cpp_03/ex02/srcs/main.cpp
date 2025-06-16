@@ -6,13 +6,14 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:16:22 by GP                #+#    #+#             */
-/*   Updated: 2025/06/16 12:21:04 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/16 13:07:42 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "Colors.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "Colors.hpp"
 
 int main (void)
 {
@@ -60,7 +61,20 @@ int main (void)
     scav.guardGate();
 
     std::cout << LINE << std::endl;
+    std::cout << CONSTRUCTOR << std::endl;
+    std::cout << LINE << std::endl;
+
+    FragTrap frag("FRAGTRAP");
+
+    frag.takeDamage(60);
+    frag.beRepaired(43);
+    frag.attack("FRAGTRAP TARGET");
+    frag.highFiveGuys();
+
+    std::cout << LINE << std::endl;
     std::cout << DESTRUCTOR << std::endl;
     std::cout << LINE << std::endl;
+
+
     return 0;
 }

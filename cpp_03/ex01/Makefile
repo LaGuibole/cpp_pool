@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: GP <GP@student.42.fr>                      +#+  +:+       +#+         #
+#    By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/14 15:00:00 by guphilip          #+#    #+#              #
-#    Updated: 2025/06/15 01:40:39 by GP               ###   ########.fr        #
+#    Updated: 2025/06/16 12:44:13 by guphilip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #                                 Makefile Portable                            #
 # **************************************************************************** #
 
-NAME        := scavstrap
+NAME        := scavtrap
 SRC_DIR     := srcs
 OBJ_DIR     := build
 INC_DIR     := includes
