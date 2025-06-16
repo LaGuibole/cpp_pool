@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+         #
+#    By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/06/14 15:00:00 by guphilip          #+#    #+#              #
-#    Updated: 2025/06/16 17:40:40 by guphilip         ###   ########.fr        #
+#    Created: 2025/06/16 20:28:22 by guillaumeph       #+#    #+#              #
+#    Updated: 2025/06/16 22:09:49 by guillaumeph      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 # **************************************************************************** #
 #                                 Makefile Portable                            #
@@ -23,11 +25,11 @@ SRCS        := $(SRC_DIR)/main.cpp \
 			   $(SRC_DIR)/Animal.cpp \
 			   $(SRC_DIR)/Dog.cpp \
 			   $(SRC_DIR)/Cat.cpp \
+			   $(SRC_DIR)/WrongAnimal.cpp \
+			   $(SRC_DIR)/WrongCat.cpp \
+			   $(SRC_DIR)/WrongDog.cpp
 
-OBJS        := $(OBJ_DIR)/main.o \
-			   $(OBJ_DIR)/Animal.o \
-			   $(OBJ_DIR)/Dog.o \
-			   $(OBJ_DIR)/Cat.o
+OBJS        := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 # OS DETECTION (MAC / LINUX)
 UNAME_S     := $(shell uname -s)
@@ -38,7 +40,7 @@ else
 endif
 
 CXX         := c++
-CXXFLAGS    := -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR) $(SYSROOT)
+CXXFLAGS    := -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
 
 # ----------------------------------------------------------------------------- #
 
