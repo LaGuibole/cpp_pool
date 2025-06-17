@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 20:44:18 by guillaumeph       #+#    #+#             */
-/*   Updated: 2025/06/16 22:57:16 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/17 18:06:01 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ const std::string& WrongAnimal::getType() const
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << this->type << ": " << this->sound << std::endl;
+	std::cout << this->type << " : " << this->sound << std::endl;
 }
 
 void WrongAnimal::printAttributes() const

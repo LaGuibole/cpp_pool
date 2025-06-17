@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongDog.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 20:47:29 by guillaumeph       #+#    #+#             */
-/*   Updated: 2025/06/16 23:02:04 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/17 18:05:24 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ WrongDog& WrongDog::operator=(const WrongDog& copy)
 		this->sound = copy.sound;
 	}
 	return *this;
+}
+
+void WrongDog::makeSound() const
+{
+	std::cout << this->type << " : It's a WrongDog sound i guess" << std::endl;
 }
 
 void WrongDog::setSound(const std::string& sound)

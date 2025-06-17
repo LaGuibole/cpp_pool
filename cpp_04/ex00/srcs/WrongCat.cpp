@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 20:47:29 by guillaumeph       #+#    #+#             */
-/*   Updated: 2025/06/16 22:59:23 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/17 18:05:29 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,9 @@ WrongCat& WrongCat::operator=(const WrongCat& copy)
 		this->sound = copy.sound;
 	}
 	return *this;
+}
+
+void WrongCat::makeSound() const
+{
+	std::cout << this->type << " : It's a WrongCat sound i guess" << std::endl;
 }

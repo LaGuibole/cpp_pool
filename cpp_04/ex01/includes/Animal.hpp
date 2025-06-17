@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 10:37:56 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/17 11:17:06 by guphilip         ###   ########.fr       */
+/*   Created: 2025/06/16 16:37:37 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/17 16:26:39 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-#define FIXED_H
+#pragma once
 
 #include <string>
 #include <iostream>
-#include <iomanip>
+#include "Brain.hpp"
 
-class Fixed
-{
-	private:
-		int value;
-		const static int bits;
+class Animal{
+	protected:
+		std::string type;
+		std::string sound;
 	public:
-		Fixed();
-		Fixed(const Fixed &f);
-		Fixed& operator=(const Fixed& copy);
-		~Fixed();
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
+		Animal();
+		Animal(const std::string& type);
+		virtual ~Animal();
+		Animal(const Animal& copy);
+		Animal& operator=(const Animal& other);
+		const std::string& getType() const;
+		void makeSound() const;
+		void printAttributes() const;
 };
-
-#endif

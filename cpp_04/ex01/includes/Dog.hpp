@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 10:37:56 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/17 11:17:06 by guphilip         ###   ########.fr       */
+/*   Created: 2025/06/16 17:14:05 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/17 16:25:26 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-#define FIXED_H
+#pragma once
 
-#include <string>
-#include <iostream>
-#include <iomanip>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Fixed
-{
+class Dog : virtual public Animal{
 	private:
-		int value;
-		const static int bits;
+		Brain*	dogBrain;
 	public:
-		Fixed();
-		Fixed(const Fixed &f);
-		Fixed& operator=(const Fixed& copy);
-		~Fixed();
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
+		Dog();
+		virtual ~Dog();
+		Dog(const Dog& copy);
+		Dog& operator=(const Dog& other);
+		void setIdea(int index, const std::string& idea);
+		std::string getIdea(int index) const;
 };
-
-#endif

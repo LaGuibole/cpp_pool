@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 10:37:56 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/17 11:17:06 by guphilip         ###   ########.fr       */
+/*   Created: 2025/06/17 11:49:33 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/17 15:55:16 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-#define FIXED_H
+#pragma once
 
 #include <string>
 #include <iostream>
-#include <iomanip>
 
-class Fixed
-{
-	private:
-		int value;
-		const static int bits;
+class Brain{
+	protected:
+		std::string ideas[100];
 	public:
-		Fixed();
-		Fixed(const Fixed &f);
-		Fixed& operator=(const Fixed& copy);
-		~Fixed();
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
+		Brain();
+		~Brain();
+		Brain(const Brain& other);
+		Brain& operator=(const Brain& copy);
+		void setIdea(int index, const std::string& idea);
+		std::string getIdea(int index) const;
 };
 
-#endif

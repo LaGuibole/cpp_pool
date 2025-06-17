@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongDog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 20:47:38 by guillaumeph       #+#    #+#             */
-/*   Updated: 2025/06/16 23:01:55 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/17 17:48:46 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ class WrongDog : virtual public WrongAnimal{
 		WrongDog(const WrongDog& other);
 		WrongDog& operator=(const WrongDog& copy);
         void setSound(const std::string& sound);
+		void makeSound() const;
 };
