@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:40:21 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/16 16:21:40 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 14:11:03 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,21 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& copy)
 
 void DiamondTrap::whoAmI() const
 {
-	std::cout << "I am the DiamonTrap named : " << this->name << " and my ClapTrap name is " << this->ClapTrap::name << std::endl;
+	std::cout << "I am the DiamondTrap named : " << this->name << " and my ClapTrap name is " << this->ClapTrap::name << std::endl;
+}
+
+void DiamondTrap::attack(const std::string& target)
+{
+	if (this->hitPoints <= 0 || this->energyPoints <= 0)
+    {
+        if (this->hitPoints <= 0)
+            std::cout << RED "This " << this->getName() << " cannot attack because it's lacking hitPoints" RESET << std::endl;
+        else if (this->energyPoints <= 0)
+            std::cout << RED "This " << this->getName() << " cannot attack because it's lacking energyPoints" RESET << std::endl;
+    }
+    else
+    {
+    std::cout << GREEN "This " << this->getName() << " shines " << target << " and deals " << this->attackDamage << " damages" RESET << std::endl;
+    this->energyPoints--;
+    }
 }

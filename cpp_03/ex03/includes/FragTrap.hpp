@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 12:26:28 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/16 16:06:04 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 14:09:58 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ class FragTrap : virtual public ClapTrap{
 
 		FragTrap();
 		FragTrap(const std::string& name);
-		~FragTrap();
+		virtual ~FragTrap();
 		FragTrap(const FragTrap& other);
 		FragTrap& operator=(const FragTrap& copy);
 		void highFiveGuys(void);
+		virtual void attack(const std::string& target);
 };

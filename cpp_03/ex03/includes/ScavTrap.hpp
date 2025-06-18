@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 01:17:55 by GP                #+#    #+#             */
-/*   Updated: 2025/06/16 15:51:22 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 14:10:02 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 #define SCAVTRAP    "|------------ SCAVTRAP -------------|"
 
-// class ClapTrap;
-
 class ScavTrap : virtual public ClapTrap{
     protected:
         std::string name;
@@ -27,8 +25,9 @@ class ScavTrap : virtual public ClapTrap{
         static const unsigned int baseEnergyPoints = 50;
         ScavTrap();
         ScavTrap(const std::string& name);
-        ~ScavTrap();
+        virtual ~ScavTrap();
         ScavTrap(const ScavTrap& other);
         ScavTrap& operator=(const ScavTrap& copy);
         void guardGate() const;
+        virtual void attack(const std::string& target);
 };

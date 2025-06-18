@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:40:23 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/16 16:06:30 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 14:07:22 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ class DiamondTrap : public FragTrap, public ScavTrap{
 		DiamondTrap(const DiamondTrap& other);
 		DiamondTrap& operator=(const DiamondTrap& copy);
 		void whoAmI() const;
+		virtual void attack(const std::string& target);
 };

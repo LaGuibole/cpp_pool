@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 12:26:31 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/16 13:19:29 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 14:04:05 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,20 @@ void FragTrap::highFiveGuys(void)
 		else
 			std::cout << "Wrong input '" << answer << "', try [y] or [n]" << std::endl;
 	}
+}
+
+void FragTrap::attack(const std::string& target)
+{
+    if (this->hitPoints <= 0 || this->energyPoints <= 0)
+    {
+        if (this->hitPoints <= 0)
+            std::cout << RED "This " << this->getName() << " cannot attack because it's lacking hitPoints" RESET << std::endl;
+        else if (this->energyPoints <= 0)
+            std::cout << RED "This " << this->getName() << " cannot attack because it's lacking energyPoints" RESET << std::endl;
+    }
+    else
+    {
+    std::cout << GREEN "This " << this->getName() << " frags " << target << " and deals " << this->attackDamage << " damages" RESET << std::endl;
+    this->energyPoints--;
+    }
 }

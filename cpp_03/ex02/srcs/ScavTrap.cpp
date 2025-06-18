@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 01:21:58 by GP                #+#    #+#             */
-/*   Updated: 2025/06/16 12:46:13 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 14:01:13 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,18 @@ void ScavTrap::guardGate() const
     std::cout << YELLOW << this->getName() << " switched to Gate Keeper mode" RESET << std::endl;
 }
 
+void ScavTrap::attack(const std::string& target)
+{
+    if (this->hitPoints <= 0 || this->energyPoints <= 0)
+    {
+        if (this->hitPoints <= 0)
+            std::cout << RED "This " << this->getName() << " cannot attack because it's lacking hitPoints" RESET << std::endl;
+        else if (this->energyPoints <= 0)
+            std::cout << RED "This " << this->getName() << " cannot attack because it's lacking energyPoints" RESET << std::endl;
+    }
+    else
+    {
+    std::cout << GREEN "This " << this->getName() << " kiss " << target << " and deals " << this->attackDamage << " damages" RESET << std::endl;
+    this->energyPoints--;
+    }
+}
