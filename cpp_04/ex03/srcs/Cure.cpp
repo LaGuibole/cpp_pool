@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:44:23 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/17 18:58:15 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 13:17:14 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Cure::Cure()
 	std::cout << "Cure default constructor has been called" << std::endl;
 }
 
-Cure::Cure(const std::string& type) : AMateria(type)
+Cure::Cure(const std::string& type) : AMateria("Cure")
 {
 	std::cout << "Cure parametized constructor has been called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:44:23 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/17 18:49:26 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 13:17:08 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Ice::Ice()
 	std::cout << "Ice default constructor has been called" << std::endl;
 }
 
-Ice::Ice(const std::string& type) : AMateria(type)
+Ice::Ice(const std::string& type) : AMateria("Ice")
 {
 	std::cout << "Ice parametized constructor has been called" << std::endl;
 }

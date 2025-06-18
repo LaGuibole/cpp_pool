@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Berserker.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 18:42:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/18 13:05:08 by guphilip         ###   ########.fr       */
+/*   Created: 2025/06/18 13:06:25 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/18 13:10:28 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Cure : public AMateria{
+class Berserker : public ICharacter{
+	protected:
+		std::string name;
+		AMateria* spells;
+		Berserker();
 	public:
-		Cure();
-		Cure(const std::string& type);
-		virtual ~Cure();
-		Cure(const Cure& copy);
-		Cure& operator=(const Cure& other);
-		Cure* clone() const;
+		Berserker(const std::string& name);
+		~Berserker();
+		Berserker(const Berserker& copy);
+		Berserker& operator=(const Berserker& other);
 };

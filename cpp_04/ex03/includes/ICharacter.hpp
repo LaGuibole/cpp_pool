@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 18:42:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/18 13:05:08 by guphilip         ###   ########.fr       */
+/*   Created: 2025/06/18 12:40:05 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/18 12:58:04 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 #include "AMateria.hpp"
 
-class Cure : public AMateria{
+class ICharacter{
+	private:
 	public:
-		Cure();
-		Cure(const std::string& type);
-		virtual ~Cure();
-		Cure(const Cure& copy);
-		Cure& operator=(const Cure& other);
-		Cure* clone() const;
+		virtual ~ICharacter();
+		virtual const std::string& getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int index) = 0;
+		virtual void use(int index, ICharacter& target) = 0;
 };
