@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Berserker.hpp                                      :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 13:06:25 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/18 13:10:28 by guphilip         ###   ########.fr       */
+/*   Created: 2025/06/18 15:01:03 by guphilip          #+#    #+#             */
+/*   Updated: 2025/06/18 16:51:52 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class Berserker : public ICharacter{
-	protected:
-		std::string name;
-		AMateria* spells;
-		Berserker();
+class IMateriaSource
+{
 	public:
-		Berserker(const std::string& name);
-		~Berserker();
-		Berserker(const Berserker& copy);
-		Berserker& operator=(const Berserker& other);
+		virtual ~IMateriaSource(){};
+		virtual void learnMateria(AMateria* materia) = 0;
+		virtual AMateria* createMateria(const std::string& type) = 0;
 };

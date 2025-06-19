@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:42:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/18 13:05:04 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 17:29:05 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ class Ice : public AMateria{
 		virtual ~Ice();
 		Ice(const Ice& copy);
 		Ice& operator=(const Ice& other);
-		Ice* clone() const;
+		virtual Ice* clone() const;
+		virtual void use(ICharacter& target);
 };

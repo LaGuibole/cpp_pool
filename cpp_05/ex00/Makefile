@@ -6,7 +6,7 @@
 #    By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/16 20:28:22 by guillaumeph       #+#    #+#              #
-#    Updated: 2025/06/19 09:48:15 by guphilip         ###   ########.fr        #
+#    Updated: 2025/06/19 18:05:21 by guphilip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,19 +16,13 @@
 #                                 Makefile Portable                            #
 # **************************************************************************** #
 
-NAME        := materia
+NAME        := bureaucrat
 SRC_DIR     := srcs
 OBJ_DIR     := build
 INC_DIR     := includes
 
 SRCS        := $(SRC_DIR)/main.cpp \
-			   $(SRC_DIR)/AMateria.cpp \
-			   $(SRC_DIR)/MateriaSource.cpp \
-			   $(SRC_DIR)/Character.cpp \
-			   $(SRC_DIR)/Ice.cpp \
-			   $(SRC_DIR)/Cure.cpp
-
-
+			   $(SRC_DIR)/Bureaucrat.cpp 
 
 OBJS        := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 

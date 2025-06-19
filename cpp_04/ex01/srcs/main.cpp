@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 17:36:52 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/17 17:04:07 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/19 09:43:39 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void)
 {
 	const int size = 4;
 	Animal* zoo[size];
-	Animal* dog = new Dog;
+	// Animal* dog = new Dog;
 
 	printConstructor();
 	for (int i = 0; i < size; i++)

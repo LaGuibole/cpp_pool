@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:42:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/18 13:05:08 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/18 17:29:18 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ class Cure : public AMateria{
 		virtual ~Cure();
 		Cure(const Cure& copy);
 		Cure& operator=(const Cure& other);
-		Cure* clone() const;
+		virtual Cure* clone() const;
+		virtual void use(ICharacter& target);
 };
