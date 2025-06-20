@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:47:32 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/20 12:49:00 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/20 16:33:13 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #include <string>
 #include <iostream>
 #include <stdexcept>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
 	private:
@@ -38,6 +41,7 @@ class Bureaucrat{
 			public:
 				const char* what() const throw();
 		};
+		void signForm(Form& form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& crat);

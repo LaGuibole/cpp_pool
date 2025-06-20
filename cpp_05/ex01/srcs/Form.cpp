@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:11:34 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/20 14:40:16 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/20 16:50:34 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ Form& Form::operator=(const Form& other)
 	return *this;
 }
 
-std::ostream& operator<<(std::ostream os, const Form& form)
+std::ostream& operator<<(std::ostream& os, const Form& form)
 {
-	std::cout << "Form name -> " << form.getName() << std::endl << "Form Minimum Signing Grade -> " << form.getSigningGrade() << std::endl << "Form Minimum Exec Grade -> " << form.getExecGrade() << std::endl;
+	os << "Form name -> " << form.getName() << std::endl << "Form Minimum Signing Grade -> " << form.getSigningGrade() << std::endl << "Form Minimum Exec Grade -> " << form.getExecGrade() << std::endl;
+	return os;
 }
 
 const std::string Form::getName() const
@@ -76,11 +77,22 @@ const char * Form::GradeTooLowException::what() const throw()
 	return "Cannot sign Form, Bureaucrat grade is too low";
 }
 
-void Form::beSigned(const Bureaucrat& crat)
+const char* Form::AlreadySignedException::what() const throw()
+{
+	return "Form is already signed why would you sign it again ?";
+}
+
+int Form::beSigned(const Bureaucrat& crat)
 {
 	int cratGrade = crat.getGrade();
 	if (cratGrade > this->minimumSigningGrade)
+	{
 		throw GradeTooLowException();
+		return 1;
+	}
+	else if (this->is_signed == true)
+		throw AlreadySignedException();
 	else
 		this->is_signed = true;
+	return 0;
 }
