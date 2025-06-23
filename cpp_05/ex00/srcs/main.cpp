@@ -6,19 +6,44 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 18:00:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/20 13:00:32 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:53:18 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Colors.hpp"
+
+void print(std::string type)
+{
+	if (type == "bureaucrat")
+	{
+		std::cout << YELLOW "------------------------------------------------" << std::endl;
+		std::cout << "----------------- INIT BUREAUCRAT --------------" << std::endl;
+		std::cout << "------------------------------------------------" RESET << std::endl;
+	}
+	else if (type == "form")
+	{
+		std::cout << YELLOW "------------------------------------------------" << std::endl;
+		std::cout << "-------------------- INIT FORM -----------------" << std::endl;
+		std::cout << "------------------------------------------------" RESET << std::endl;
+	}
+	else if (type == "action")
+	{
+		std::cout << YELLOW "------------------------------------------------" << std::endl;
+		std::cout << "--------------------- ACTIONS ------------------" << std::endl;
+		std::cout << "------------------------------------------------" RESET << std::endl;
+	}
+}
 
 int main(void)
 {
 	try
 	{
+		print("bureaucrat");
 		Bureaucrat crat1("Billie Butcher", 50);
 		std::cout << crat1 << std::endl;
-
+		
+		print("action");
 		crat1.incrementGrade(30);
 		std::cout << "After promotion: " << crat1 << std::endl;
 		crat1.incrementGrade(10);

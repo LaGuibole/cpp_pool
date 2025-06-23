@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:47:42 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/20 16:36:11 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:56:11 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destructor has been called" << std::endl;
+	// std::cout << "Bureaucrat destructor has been called" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)

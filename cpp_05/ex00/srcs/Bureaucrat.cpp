@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:47:42 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/20 12:51:29 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:49:47 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat()
 {
-	std::cout << "Bureaucrat default constructor has been called" << std::endl;
+	// std::cout << "Bureaucrat default constructor has been called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade)
@@ -29,12 +29,12 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy)
 {
 	this->name = copy.name;
 	this->grade = copy.grade;
-	std::cout << "Bureaucrat copy constructor has been called for this : " << this->name << std::endl;
+	// std::cout << "Bureaucrat copy constructor has been called for this : " << this->name << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destructor has been called" << std::endl;
+	// std::cout << "Bureaucrat destructor has been called" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)

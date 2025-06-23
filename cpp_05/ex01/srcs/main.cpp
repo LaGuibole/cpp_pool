@@ -6,11 +6,12 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 18:00:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/20 16:50:49 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/23 12:12:50 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include "Colors.hpp"
 
 void print(std::string type)
@@ -74,5 +75,22 @@ int main(void)
 		std::cerr << "Error catched : " << crat2.what() << std::endl;
 	}
 
+	std::cout << "------------------------------------------------" << std::endl;
+
+	try
+	{
+		Bureaucrat crat3("Jaja la demaga", 11);
+		Form test2("Test Form", 10, 10);
+		crat3.signForm(test2);
+	}
+	catch (const GradeTooLowException& e)
+	{
+
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Error catched : " << e.what() << std::endl;
+	}
+	std::cout << "------------------------------------------------" << std::endl;
 	return 0;
 }
