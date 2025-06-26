@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 18:00:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/23 12:12:50 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:01:47 by guillaumeph      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int main(void)
 		Form test2("Test Form", 10, 10);
 		crat3.signForm(test2);
 	}
-	catch (const GradeTooLowException& e)
+	catch (const Form::GradeTooLowException& e)
 	{
 
 	}

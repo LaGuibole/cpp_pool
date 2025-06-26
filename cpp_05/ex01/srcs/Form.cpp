@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:11:34 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/20 16:50:34 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:16:11 by guillaumeph      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ const std::string Form::getName() const
 	return this->name;
 }
 
-bool Form::isFormSigned() const
+bool Form::getSignedStatus() const
 {
 	return this->is_signed;
 }
@@ -82,17 +82,13 @@ const char* Form::AlreadySignedException::what() const throw()
 	return "Form is already signed why would you sign it again ?";
 }
 
-int Form::beSigned(const Bureaucrat& crat)
+void Form::beSigned(const Bureaucrat& crat)
 {
 	int cratGrade = crat.getGrade();
 	if (cratGrade > this->minimumSigningGrade)
-	{
 		throw GradeTooLowException();
-		return 1;
-	}
 	else if (this->is_signed == true)
 		throw AlreadySignedException();
 	else
 		this->is_signed = true;
-	return 0;
 }

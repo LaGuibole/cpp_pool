@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:09:43 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/20 16:34:06 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:16:10 by guillaumeph      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ class Form{
 		Form(const Form& copy);
 		Form& operator=(const Form& other);
 		const std::string getName() const;
-		bool isFormSigned() const;
+		bool getSignedStatus() const;
 		int getSigningGrade() const;
 		int getExecGrade() const;
-		int beSigned(const Bureaucrat& crat);
+		void beSigned(const Bureaucrat& crat);
 		class GradeTooHighException : public std::exception{
 			public:
 				const char * what() const throw();
