@@ -6,7 +6,7 @@
 /*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:11:34 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/26 15:16:11 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/26 15:47:52 by guillaumeph      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ const char* Form::AlreadySignedException::what() const throw()
 
 void Form::beSigned(const Bureaucrat& crat)
 {
+	std::cout << "Calling beSigned() method in Form" << std::endl;
 	int cratGrade = crat.getGrade();
 	if (cratGrade > this->minimumSigningGrade)
 		throw GradeTooLowException();
