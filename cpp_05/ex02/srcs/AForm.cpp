@@ -69,17 +69,17 @@ int AForm::getExecGrade() const
 
 const char * AForm::GradeTooHighException::what() const throw()
 {
-	return "Cannot sign AForm, Bureaucrat grade is too high";
+	return "Bureaucrat grade is too high";
 }
 
 const char * AForm::GradeTooLowException::what() const throw()
 {
-	return "Cannot sign AForm, Bureaucrat grade is too low";
+	return "Bureaucrat grade is too low";
 }
 
 const char* AForm::AlreadySignedException::what() const throw()
 {
-	return "AForm is already signed why would you sign it again ?";
+	return "Form is already signed why would you sign it again ?";
 }
 
 const char* AForm::FormNotSignedException::what() const throw()

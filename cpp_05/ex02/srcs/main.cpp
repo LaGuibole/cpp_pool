@@ -6,7 +6,7 @@
 /*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 18:00:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/26 18:04:47 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/26 18:58:21 by guillaumeph      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,23 @@ void print(std::string type)
 		std::cout << "----------------- ROBOTOMY FORM ---------------" << std::endl;
 		std::cout << "------------------------------------------------" RESET << std::endl;
 	}
+		else if (type == "execute")
+	{
+		std::cout << YELLOW "------------------------------------------------" << std::endl;
+		std::cout << "---------------- EXECUTING FORMS ---------------" << std::endl;
+		std::cout << "------------------------------------------------" RESET << std::endl;
+	}
 }
 
 int main(void)
 {
 	std::srand(time(NULL));
+
+	/*
+	ALL THE FORM REQUIRED BY THE SUBJECTS ARE HERE SIGNED AND EXECUTED WIHTOUT
+	PROBLEMS TO SHOW "NORMAL" OUTPUTS.
+	*/
+
 	try
 	{
 		print("bureaucrat");
@@ -72,7 +84,7 @@ int main(void)
 		std::cout << pres;
 		RobotomyRequestForm robotomy("Robotomy Target");
 		std::cout << robotomy;
-		print("action");
+		print("execute");
 		print("shrub");
 		crat1.signForm(shrub);
 		crat1.executeForm(shrub);
@@ -88,4 +100,33 @@ int main(void)
 	{
 		std::cout << "Error catched : " << e.what() << std::endl;
 	}
+
+	/*
+	HERE, SIGN CAN SIGN THE PRESIDENTIAL FORM BUT CANNOT EXECUTE IT, THIS TEST
+	WILL SHOW THAT A FORM MUST BE SIGNED IN ORDER TO BE EXECUTED AND ONCE SIGNED
+	CAN BE EXECUTED BY A BUREAUCRAT WHO HAS THE REQUIRED GRADE.
+	*/
+
+	try
+	{
+		print("bureaucrat");
+		Bureaucrat sign("Sign", 25);
+		Bureaucrat exec("Exec", 5);
+		std::cout << sign;
+		std::cout << exec;
+		print("pres");
+		PresidentialPardonForm pres("Pres Target");
+		std::cout << pres;
+		print("action");
+		exec.executeForm(pres);
+		sign.signForm(pres); 
+		sign.executeForm(pres);
+		// exec.signForm(pres);
+		exec.executeForm(pres);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error catched : " << e.what() << std::endl;
+	}
+	
 }
