@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:05:47 by guillaumeph       #+#    #+#             */
-/*   Updated: 2025/06/26 19:29:18 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/27 13:44:19 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class Intern{
             std::string formName;
             FormConstructor constructor;
         };
+        static AForm* createShrubbery(const std::string& target);
+        static AForm* createPardon(const std::string& target);
+        static AForm* createRobotomy(const std::string& target);
     public:
         Intern();
         Intern(const Intern& copy);
@@ -33,7 +36,4 @@ class Intern{
         ~Intern();
 
         AForm* makeForm(const std::string& name, const std::string& target);
-        static AForm* createShrubbery(const std::string& target);
-        static AForm* createPardon(const std::string& target);
-        static AForm* createRobotomy(const std::string& target);
 };

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 18:00:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/26 18:58:21 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/27 14:18:55 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "Colors.hpp"
+#include <cstdlib>
+#include <ctime>
 
 void print(std::string type)
 {
@@ -65,7 +67,7 @@ void print(std::string type)
 
 int main(void)
 {
-	std::srand(time(NULL));
+	srand(time(NULL));
 
 	/*
 	ALL THE FORM REQUIRED BY THE SUBJECTS ARE HERE SIGNED AND EXECUTED WIHTOUT
@@ -119,7 +121,7 @@ int main(void)
 		std::cout << pres;
 		print("action");
 		exec.executeForm(pres);
-		sign.signForm(pres); 
+		sign.signForm(pres);
 		sign.executeForm(pres);
 		// exec.signForm(pres);
 		exec.executeForm(pres);
@@ -128,5 +130,5 @@ int main(void)
 	{
 		std::cerr << "Error catched : " << e.what() << std::endl;
 	}
-	
+
 }

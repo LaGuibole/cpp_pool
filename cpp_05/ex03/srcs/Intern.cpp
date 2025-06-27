@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:08:42 by guillaumeph       #+#    #+#             */
-/*   Updated: 2025/06/26 19:51:34 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/27 14:25:59 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+#include <cstdlib>
+#include <ctime>
 
 Intern::Intern()
 {

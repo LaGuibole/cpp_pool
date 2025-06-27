@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 18:00:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/26 19:50:04 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/27 14:26:22 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "RobotomyRequestForm.hpp"
 #include "Intern.hpp"
 #include "Colors.hpp"
+#include <cstdlib>
+#include <ctime>
 
 void print(std::string type)
 {
@@ -75,14 +77,14 @@ int main(void)
 	rrf = someRandomIntern.makeForm("Robotomy Request", "Bender_Robotomy");
 	ppf = someRandomIntern.makeForm("Presidential Pardon", "Bender_Pres");
 	scf = someRandomIntern.makeForm("Shrubbery Creation", "Bender_Shrub");
-	
+
 	if (rrf &&  ppf && scf)
 	{
 		print("form");
 		std::cout << *rrf;
 		std::cout << *ppf;
 		std::cout << *scf;
-		try 
+		try
 		{
 			print("bureaucrat");
 			Bureaucrat crat("Jojo le demago", 1);
@@ -95,7 +97,7 @@ int main(void)
 			crat.executeForm(*ppf);
 			crat.executeForm(*scf);
 		}
-	
+
 		catch(const std::exception& e)
 		{
 			std::cerr << "Error catched : " << e.what() << std::endl;

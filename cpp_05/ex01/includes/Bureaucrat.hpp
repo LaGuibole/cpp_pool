@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:47:32 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/26 15:47:49 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/27 13:58:22 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Form;
 
 class Bureaucrat{
 	private:
-		std::string name;
+		const std::string name;
 		int grade;
-	public:
 		Bureaucrat();
+	public:
 		~Bureaucrat();
 		Bureaucrat(const std::string& name, int grade);
 		Bureaucrat(const Bureaucrat& copy);

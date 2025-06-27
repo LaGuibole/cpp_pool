@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:47:42 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/26 15:47:46 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/27 13:58:51 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(g
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy)
 {
-	this->name = copy.name;
-	this->grade = copy.grade;
+	new(this)Bureaucrat(copy.name, copy.grade);
 	// std::cout << "Bureaucrat copy constructor has been called for this : " << this->name << std::endl;
 }
 
@@ -39,11 +38,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
-	if (this != &other)
-	{
-		this->name = other.name;
-		this->grade = other.grade;
-	}
+	new(this)Bureaucrat(other);
 	return *this;
 }
 
@@ -91,7 +86,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 void Bureaucrat::signForm(Form& form)
 {
-	try 
+	try
 	{
 		std::cout << this->name << " attempts to sign this " << form.getName() << " through Bureaucrat signForm() method." << std::endl;
 		form.beSigned(*this);

@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:15:52 by guillaumeph       #+#    #+#             */
-/*   Updated: 2025/06/26 17:56:30 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/27 14:26:33 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("RobotomyRequestForm", 72, 45), target(target) {
-    // std::cout << "RobotomyRequestForm constructor has been called" << std::endl; 
+    // std::cout << "RobotomyRequestForm constructor has been called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) : AForm(copy)
@@ -50,7 +52,7 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const
     else
     {
         std::cout << "* bzzzzzzz bzzz drilling noise, fear for your brain bwww wwbw *" << std::endl;
-        if (std::rand() % 2 == 0)
+        if (rand() % 2 == 0)
             std::cout << this->target << " has been robotomized." << std::endl;
         else
             std::cout << "Robotomy has failed for " << this->target << std::endl;

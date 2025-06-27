@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 18:00:26 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/23 11:53:18 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/27 13:57:52 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,12 @@ int main(void)
 	{
 		print("bureaucrat");
 		Bureaucrat crat1("Billie Butcher", 50);
+		Bureaucrat crat2(crat1);
+		Bureaucrat crat3 = crat1;
 		std::cout << crat1 << std::endl;
-		
+		std::cout << crat2 << std::endl;
+		std::cout << crat3 << std::endl;
+
 		print("action");
 		crat1.incrementGrade(30);
 		std::cout << "After promotion: " << crat1 << std::endl;
@@ -64,7 +68,7 @@ int main(void)
 
 	try
 	{
-		Bureaucrat crat2("Jojo le demago", 151);
+		Bureaucrat crat2("Jojo le demago", 0);
 	}
 	catch (std::exception& crat2)
 	{

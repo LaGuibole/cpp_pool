@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
+/*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:11:34 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/26 15:47:52 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/06/27 14:15:40 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ Form::~Form()
 Form::Form(const std::string& name, const int minimumSigningGrade, const int minimumExecGrade) : name(name), minimumExecGrade(minimumExecGrade), minimumSigningGrade(minimumSigningGrade)
 {
 	// std::cout << "Form parametized constructor has been called" << std::endl;
+	if (minimumSigningGrade < 1 || minimumExecGrade < 1)
+		throw GradeTooHighException();
+	else if (minimumSigningGrade > 150 || minimumExecGrade > 150)
+		throw GradeTooLowException();
 	this->is_signed = false;
 }
 
@@ -69,12 +73,12 @@ int Form::getExecGrade() const
 
 const char * Form::GradeTooHighException::what() const throw()
 {
-	return "Cannot sign Form, Bureaucrat grade is too high";
+	return "Grade is too high";
 }
 
 const char * Form::GradeTooLowException::what() const throw()
 {
-	return "Cannot sign Form, Bureaucrat grade is too low";
+	return "Grade is too low";
 }
 
 const char* Form::AlreadySignedException::what() const throw()

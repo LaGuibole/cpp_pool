@@ -25,6 +25,10 @@ AForm::~AForm()
 AForm::AForm(const std::string& name, const int minimumSigningGrade, const int minimumExecGrade) : name(name), minimumExecGrade(minimumExecGrade), minimumSigningGrade(minimumSigningGrade)
 {
 	// std::cout << "AForm parametized constructor has been called" << std::endl;
+	if (minimumSigningGrade < 1 || minimumExecGrade < 1)
+		throw GradeTooHighException();
+	else if (minimumSigningGrade > 150 || minimumExecGrade > 150)
+		throw GradeTooLowException();
 	this->is_signed = false;
 }
 
