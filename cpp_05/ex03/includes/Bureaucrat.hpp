@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:47:32 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/27 14:20:56 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/27 14:38:55 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Bureaucrat{
 	private:
 		const std::string name;
 		int grade;
-	public:
 		Bureaucrat();
+	public:
 		~Bureaucrat();
 		Bureaucrat(const std::string& name, int grade);
 		Bureaucrat(const Bureaucrat& copy);
