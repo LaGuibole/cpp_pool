@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 14:42:36 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/27 14:49:33 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/06/30 14:05:32 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+#include <climits>
+#include <cfloat>
+#include <cstdlib>
+
 
 class ScalarConverter{
 	private:

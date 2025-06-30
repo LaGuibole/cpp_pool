@@ -6,7 +6,7 @@
 #    By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/16 20:28:22 by guillaumeph       #+#    #+#              #
-#    Updated: 2025/06/27 14:41:07 by guphilip         ###   ########.fr        #
+#    Updated: 2025/06/30 14:04:26 by guphilip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@
 #                                 Makefile Portable                            #
 # **************************************************************************** #
 
-NAME        := bureaucrat
+NAME        := convert
 SRC_DIR     := srcs
 OBJ_DIR     := build
 INC_DIR     := includes
 
-SRCS        := $(SRC_DIR)/main.cpp 
+SRCS        := $(SRC_DIR)/main.cpp \
+			   $(SRC_DIR)/ScalarConverter.cpp
 
 OBJS        := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
