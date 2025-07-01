@@ -6,15 +6,20 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:37:34 by guphilip          #+#    #+#             */
-/*   Updated: 2025/06/30 16:50:20 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/01 15:49:51 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Iter.hpp"
 
+void increment(int& i)
+{
+	i++;
+}
+
 int main(void)
 {
-	int tab[] = {1, 2, 3, 4 , 5};
+	int tab[] = {1, 2, 3, 4, 5};
 	std::cout << "Original Int Array: ";
 	iter(tab, 5, print<int>);
 	std::cout << std::endl;

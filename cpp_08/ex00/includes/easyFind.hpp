@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Iter.hpp                                           :+:      :+:    :+:   */
+/*   easyFind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 16:36:49 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/01 15:49:03 by guphilip         ###   ########.fr       */
+/*   Created: 2025/07/01 11:13:25 by guphilip          #+#    #+#             */
+/*   Updated: 2025/07/01 11:33:33 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
-#include <iomanip>
 #include <iostream>
+#include <iomanip>
+#include <stdexcept>
 
-template<typename T>
-void print(const T& str)
-{
-	std::cout << str << " ";
-}
+class easyFind{
+	public:
+		class OccurenceNotFoundException : public std::exception{
+			public:
+				const char* what() const throw();
+		};
+};
 
-template <typename T, typename F>
-void iter(T* array, size_t length, F function)
-{
-	if (!array || !function)
-		return ;
-	for (size_t i = 0; i < length; i++)
-		function(array[i]);
-}
+#include "easyFind.tpp"
