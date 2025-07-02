@@ -6,7 +6,7 @@
 #    By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/16 20:28:22 by guillaumeph       #+#    #+#              #
-#    Updated: 2025/07/02 12:31:51 by guphilip         ###   ########.fr        #
+#    Updated: 2025/07/02 12:34:58 by guphilip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@
 #                                 Makefile Portable                            #
 # **************************************************************************** #
 
-NAME        := span
+NAME        := mutant_stack
 SRC_DIR     := srcs
 OBJ_DIR     := build
 INC_DIR     := includes
 
 SRCS        := $(SRC_DIR)/main.cpp \
-			   $(SRC_DIR)/Span.cpp
+			   
 OBJS        := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 # OS DETECTION (MAC / LINUX)

@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 13:07:19 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/01 14:33:30 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/02 12:31:35 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ int Span::shortestSpan() const
 	if (_intStock.size() < 2)
 		throw Span::NotEnoughNumbersException();
 
-		std::vector<int> tmp = _intStock;
-		std::sort(tmp.begin(), tmp.end());
+	std::vector<int> tmp = _intStock;
+	std::sort(tmp.begin(), tmp.end());
 
 	int minSpan = std::numeric_limits<int>::max();
 	for (size_t i = 1; i < tmp.size(); i++)
