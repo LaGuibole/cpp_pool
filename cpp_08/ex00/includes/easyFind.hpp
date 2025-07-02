@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:13:25 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/01 11:33:33 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:24:41 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@
 #include <iostream>
 #include <iomanip>
 #include <stdexcept>
+#include <algorithm>
 
-class easyFind{
-	public:
-		class OccurenceNotFoundException : public std::exception{
-			public:
-				const char* what() const throw();
-		};
-};
+	class OccurenceNotFoundException : public std::exception{
+		public:
+			const char* what() const throw();
+	};
 
 #include "easyFind.tpp"
