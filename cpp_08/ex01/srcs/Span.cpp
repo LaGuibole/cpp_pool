@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 13:07:19 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/02 12:31:35 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:36:08 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Span& Span::operator=(const Span& other)
 		this->_N = other._N;
 		this->_intStock = other._intStock;
 	}
-		// std::cout << "Span copy assignment operator has been called" << std::endl;
+	// std::cout << "Span copy assignment operator has been called" << std::endl;
 	return (*this);
 }
 
