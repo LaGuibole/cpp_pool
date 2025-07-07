@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 10:59:44 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/07 11:26:48 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/07 12:38:07 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ class RPN{
 		void handleTime();
 		void handleDivide();
 		void handleSub();
-
+		void validateDigit(const std::string& digit);
+		
 	class NotEnoughValueException : public std::exception
 	{
 		public:

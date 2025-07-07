@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 10:59:46 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/07 11:34:49 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/07 12:51:35 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,9 @@ const char* RPN::InvalidInputException::what() const throw()
 const char* RPN::DividedByZero::what() const throw()
 {
 	return "Error: Trying to divide by zero, (WTF?).\n";
+}
+void RPN::validateDigit(const std::string& digit)
+{
+
 }
 
