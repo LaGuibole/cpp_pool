@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 16:28:21 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/03 18:25:09 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/11 11:28:30 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,58 @@ float BitcoinExchange::getRateForDate(const std::string& date) const
 }
 
 
+// bool BitcoinExchange::isValidDate(const std::string& date) const
+// {
+// 	return date.size() == 10 && date[4] == '-' && date[7] == '-';
+// }
+
 bool BitcoinExchange::isValidDate(const std::string& date) const
 {
-	return date.size() == 10 && date[4] == '-' && date[7] == '-';
+	// get today's date
+	std::time_t now = std::time(NULL);
+	std::tm* local = std::localtime(&now);
+	int currentYear = local->tm_year + 1900;
+	int currentMonth = local->tm_mon + 1;
+	int currentDay = local->tm_mday;
+
+	// validate date and verifying if date composed of digits
+	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
+		return false;
+
+	for (size_t i = 0; i < date.length(); i++)
+	{
+		if (i == 4 || i == 7)
+			continue;
+		if (!std::isdigit(date[i]))
+			return false;
+	}
+	
+	// retrieving bitcoin.txt dates
+	int year = std::atoi(date.substr(0, 4).c_str());
+	int month = std::atoi(date.substr(5, 2).c_str());
+	int day = std::atoi(date.substr(8, 2).c_str());
+
+	if (month < 1 || month > 12 || day < 1)
+		return false;
+
+	// checking for leap year
+	// reminder : a leap year is a multiplier of 4 but not a multiplier of 100
+	// if it is a multiplier of 400, it is also a leap year
+	int daysInMonth[] = {31, 28, 31, 30, 31, 30,
+						31, 31, 30, 31, 30, 31};
+
+	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+		daysInMonth[1] = 29;
+
+	if (day > daysInMonth[month - 1])
+		return false;
+
+	if (year > currentYear)
+		return false;
+	else if (year == currentYear && month > currentMonth)
+		return false;
+	else if (year == currentYear && month == currentMonth && day > currentDay)
+		return false;
+
+	return true;
 }

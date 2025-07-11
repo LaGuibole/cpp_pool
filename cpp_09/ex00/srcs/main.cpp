@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 16:28:23 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/07 10:57:06 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/11 10:42:25 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,57 @@ int main(int argc, char **argv)
 		std::istringstream ss(line);
 		std::string date, valueStr;
 
-		if (!std::getline(ss, date, '|') || std::getline(ss, valueStr))
+		if (!std::getline(ss, date, '|') || !std::getline(ss, valueStr))
 		{
 			std::cerr << "Error: bad input => " << line << std::endl;
 			continue ;
 		}
 
-		date = std::string(date.begin(), date.end() - (date.back() == ' '));
+		if (!date.empty() && date[date.size() - 1] == ' ')
+			date.erase(date.size() - 1);
 		valueStr.erase(0, valueStr.find_first_not_of(" \t"));
-		float value = std::strtof(valueStr.c_str(), NULL);
+
+		char* endPtr = NULL;
+		float value = std::strtof(valueStr.c_str(), &endPtr);
+
+		// conversion check (total or partial)
+		if (*endPtr != '\0')
+		{
+			std::cerr << "Error: bad input => " << line << std::endl;
+			continue;
+		}
+
+		// check value < 0
+		if (value < 0)
+		{
+			std::cerr << "Error: not a positive number." << std::endl;
+			continue;
+		}
+
+		// check too large value
+		if (value > 1000)
+		{
+			std::cerr << "Error: too large a number." << std::endl;
+			continue;
+		}
 
 		if (!exchange.isValidDate(date))
 		{
 			std::cerr << "Error: invalid date" << std::endl;
 		}
+		
+		else
+		{
+			float rate = exchange.getRateForDate(date);
+			if (rate == -1)
+				std::cerr << "Error: no rate found before " << date << std::endl;
+			else
+			{
+				std::cout << date << " => " << value << " = ";
+				std::cout << std::fixed << std::setprecision(2) << value * rate << std::endl;
+			}
+		}
 	}
+
+	return 0;
 }

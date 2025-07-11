@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 16:28:19 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/03 18:21:44 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/11 11:17:01 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <iomanip>
 #include <string>
 #include <cstdlib>
+#include <ctime>
 
 class BitcoinExchange{
 	private:
