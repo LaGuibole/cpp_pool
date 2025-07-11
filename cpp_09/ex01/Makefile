@@ -6,7 +6,7 @@
 #    By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/16 20:28:22 by guillaumeph       #+#    #+#              #
-#    Updated: 2025/07/07 10:59:35 by guphilip         ###   ########.fr        #
+#    Updated: 2025/07/11 09:26:08 by guphilip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@
 #                                 Makefile Portable                            #
 # **************************************************************************** #
 
-NAME        := btc
+NAME        := RPN
 SRC_DIR     := srcs
 OBJ_DIR     := build
 INC_DIR     := includes
 
 SRCS        := $(SRC_DIR)/main.cpp \
+			   $(SRC_DIR)/RPN.cpp
 
 OBJS        := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
@@ -34,7 +35,7 @@ else
 endif
 
 CXX         := c++
-CXXFLAGS    := -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
+CXXFLAGS    := -Wall -Wextra -Werror -std=c++98 -g -I$(INC_DIR)
 
 # ----------------------------------------------------------------------------- #
 

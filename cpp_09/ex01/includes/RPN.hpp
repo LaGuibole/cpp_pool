@@ -6,7 +6,7 @@
 /*   By: guphilip <guphilip@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 10:59:44 by guphilip          #+#    #+#             */
-/*   Updated: 2025/07/07 12:38:07 by guphilip         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:58:39 by guphilip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 #include <stack>
 
 class RPN{
 	private:
-		std::stack<double> _value;
+		std::stack<int> _value;
 		RPN(const RPN& copy);
 		RPN& operator=(const RPN& other);
 
@@ -32,7 +33,7 @@ class RPN{
 		void handleDivide();
 		void handleSub();
 		void validateDigit(const std::string& digit);
-		
+
 	class NotEnoughValueException : public std::exception
 	{
 		public:
@@ -45,7 +46,7 @@ class RPN{
 			virtual const char* what() const throw();
 	};
 
-	class DividedByZero : public std::exception
+	class DividedByZeroException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw();
