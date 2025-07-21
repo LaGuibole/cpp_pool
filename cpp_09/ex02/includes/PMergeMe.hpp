@@ -6,7 +6,7 @@
 /*   By: guillaumephilippe <guillaumephilippe@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 17:45:32 by guillaumeph       #+#    #+#             */
-/*   Updated: 2025/07/19 19:45:32 by guillaumeph      ###   ########.fr       */
+/*   Updated: 2025/07/21 19:45:11 by guillaumeph      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ class PMergeMe {
 		void checkDuplicates(const std::vector<int>& data) const;
 		void checkDuplicates(const std::deque<int>& data) const;
 		//sort logic
+		void mergeSort(std::vector<int>& vec, int left, int right);
+		void mergeSort(std::deque<int>& deq, int left, int right);
 		void fordJohnsonSortVec(std::vector<int>& data);
 		void fordJohnsonSortDeq(std::deque<int>& data);
 		//pair logic
@@ -56,5 +58,3 @@ class PMergeMe {
 		void printContainerVec(const std::string& name, const std::vector<int>& vec);
 		void printContainerDeq(const std::string& name, const std::deque<int>& deq);
 };
-
-static void merge(std::vector<int>& vec, int left, int mid, int right);
